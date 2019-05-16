@@ -6,8 +6,7 @@ import 'state.dart';
 import 'view.dart';
 
 class ThreePage extends Page<ThreeState, Map<String, dynamic>> {
-  ThreePage()
-      : super(
+  ThreePage() : super(
             initState: initState,
             effect: buildEffect(),
             reducer: buildReducer(),
@@ -15,8 +14,11 @@ class ThreePage extends Page<ThreeState, Map<String, dynamic>> {
             dependencies: Dependencies<ThreeState>(
                 adapter: null,
                 slots: <String, Dependent<ThreeState>>{
-                }),
+
+                }
+            ),
             middleware: <Middleware<ThreeState>>[
-            ],);
+            ],
+        );
 
 }

@@ -6,12 +6,13 @@ import 'state.dart';
 Reducer<ThreeState> buildReducer() {
   return asReducer(
     <Object, Reducer<ThreeState>>{
-      ThreeAction.action: _onAction,
+      ThreeAction.plusReducer: _onPlusReducer,
     },
   );
 }
 
-ThreeState _onAction(ThreeState state, Action action) {
+ThreeState _onPlusReducer(ThreeState state, Action action) {
   final ThreeState newState = state.clone();
+  newState.name = action.payload;
   return newState;
 }

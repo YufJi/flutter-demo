@@ -4,9 +4,11 @@ import 'state.dart';
 
 Effect<ThreeState> buildEffect() {
   return combineEffects(<Object, Effect<ThreeState>>{
-    ThreeAction.action: _onAction,
+    ThreeAction.plus: _onPlus,
   });
 }
 
-void _onAction(Action action, Context<ThreeState> ctx) {
+void _onPlus(Action action, Context<ThreeState> ctx) {
+
+  ctx.dispatch(ThreeActionCreator.onPlusReducer(action.payload));
 }

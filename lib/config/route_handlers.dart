@@ -8,7 +8,7 @@ import 'package:flutter_demo/pages/three_page/page.dart';
 var rootHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return new MyHomePage(
-    title: 'sfadsfasfffasf',
+    title: 'home page',
   );
 });
 
