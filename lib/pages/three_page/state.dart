@@ -1,13 +1,15 @@
 import 'package:fish_redux/fish_redux.dart';
 
-class ThreeState implements Cloneable<ThreeState> {
-
-  @override
-  ThreeState clone() {
-    return ThreeState();
-  }
+ThreeState initState(Map<String, dynamic> args) {
+  final state = new ThreeState(0);
+  return state;
 }
 
-ThreeState initState(Map<String, dynamic> args) {
-  return ThreeState();
+class ThreeState implements Cloneable<ThreeState> {
+  int number;
+  ThreeState(this.number);
+  @override
+  ThreeState clone() {
+    return new ThreeState(this.number);
+  }
 }

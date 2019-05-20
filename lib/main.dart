@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_demo/config/router.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter_demo/application.dart';
+import 'package:flutter_demo/helpers/constants.dart';
+
+import 'package:fluro/fluro.dart';
+
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      systemNavigationBarColor: Color(AppColors.themeColor),
+      statusBarColor: Color(AppColors.themeColor), 
+    )
+  );
   runApp(App());
 }
 
@@ -31,7 +42,6 @@ class AppState extends State<App> {
       ),
       onGenerateRoute: Application.router.generator,
     );
-    print("initial route = ${app.initialRoute}");
     return app;
   }
 }
