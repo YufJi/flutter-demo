@@ -8,3 +8,7 @@ class AppColors {
   static const int themeColorGray = 0xff2A2C33; 
 }
 
+class FontFamily {
+  static const String IconFont = 'IconFont';
+}
+

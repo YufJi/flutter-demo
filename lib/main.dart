@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'dart:ui';
+
 import 'package:flutter_demo/config/router.dart';
 import 'package:flutter_demo/application.dart';
 import 'package:flutter_demo/helpers/constants.dart';
@@ -34,6 +36,7 @@ class AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    Application.size = window.physicalSize;
     final app = new MaterialApp(
       title: 'Fluro',
       debugShowCheckedModeBanner: false,
