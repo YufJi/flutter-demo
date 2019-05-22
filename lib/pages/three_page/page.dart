@@ -5,7 +5,10 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
+// import 'package:flutter/material.dart';
+
 class ThreePage extends Page<ThreeState, Map<String, dynamic>> {
+
   ThreePage() : super(
     initState: initState,
     effect: buildEffect(),

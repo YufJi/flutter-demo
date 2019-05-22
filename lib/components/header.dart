@@ -5,9 +5,7 @@ import 'package:flutter_demo/helpers/constants.dart';
 class MyHeader extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) {
-    return Material(
-      color: Colors.transparent,
-      child: SafeArea(
+    return SafeArea(
         child: Container(
           color: Colors.transparent,
           height: 40.0,
@@ -43,7 +41,6 @@ class MyHeader extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

@@ -4,4 +4,5 @@ import 'package:flutter/material.dart';
 class Application {
   static Router router;
   static Size size;
+  static ScrollController scrollController = new ScrollController();
 }

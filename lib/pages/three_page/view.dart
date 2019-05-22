@@ -9,6 +9,7 @@ import 'state.dart';
 import 'package:flutter_demo/components/tab.dart' as tabComponent;
 import 'package:flutter_demo/components/header.dart';
 import 'package:flutter_demo/application.dart';
+import 'package:flutter_demo/utils/tools.dart' as Tools;
 
 const Color ThemeColor = Color(0x11233411);
 
@@ -22,8 +23,6 @@ Widget buildView(ThreeState state, Dispatch dispatch, ViewService viewService) {
     height: 2,
   );
 
-  // DefaultTextStyle.merge() allows you to create a default text
-  // style that is inherited by its child and all subsequent children.
   final iconList = DefaultTextStyle.merge(
     style: descTextStyle,
     child: Container(
@@ -56,13 +55,17 @@ Widget buildView(ThreeState state, Dispatch dispatch, ViewService viewService) {
       ),
     ),
   );
- 
+
+  Application.scrollController.addListener(Tools.throttle(() {
+    print(Application.scrollController.offset);
+  }, 500, leading: true));
+  
   return Scaffold(
     backgroundColor: Color.fromRGBO(245, 245, 245, 1),
     body: Stack(
       children: <Widget>[
         SingleChildScrollView(
-          // controller: ,
+          controller: Application.scrollController,
           child: Column(
             children: <Widget>[
               Stack(
@@ -134,7 +137,6 @@ Widget buildView(ThreeState state, Dispatch dispatch, ViewService viewService) {
               iconList, 
             ], 
           ),
-
         ),
         MyHeader(),
       ],
